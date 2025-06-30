@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs Golf Tracker - Help & Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2C5F2D 0%, #97BC62 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .search-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #2C5F2D;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .help-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .help-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .help-card h3 {
+            color: #2C5F2D;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .help-card ul {
+            list-style: none;
+        }
+
+        .help-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .help-card a:hover {
+            color: #2C5F2D;
+        }
+
+        .faq-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #2C5F2D;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #2C5F2D;
+            margin-bottom: 1rem;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #2C5F2D;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background: #1e4220;
+        }
+
+        footer {
+            background: #2C5F2D;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .help-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>🏌️ Clubs Golf Tracker</h1>
+                <p>Help & Support Documentation</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="search-section">
+                <div class="search-box">
+                    <svg class="search-icon icon" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Search for help topics..." id="searchInput">
+                </div>
+            </section>
+
+            <section class="help-sections">
+                <div class="help-card">
+                    <h3>
+                        🚀 Getting Started
+                    </h3>
+                    <ul>
+                        <li><a href="#account-setup">Creating Your Account</a></li>
+                        <li><a href="#first-round">Starting Your First Round</a></li>
+                        <li><a href="#profile-setup">Setting Up Your Profile</a></li>
+                        <li><a href="#handicap">Understanding Handicap</a></li>
+                    </ul>
+                </div>
+
+                <div class="help-card">
+                    <h3>
+                        🏌️ Playing Rounds
+                    </h3>
+                    <ul>
+                        <li><a href="#new-round">Creating a New Round</a></li>
+                        <li><a href="#tracking-swings">Tracking Your Swings</a></li>
+                        <li><a href="#hole-scoring">Recording Hole Scores</a></li>
+                        <li><a href="#completing-rounds">Completing Rounds</a></li>
+                    </ul>
+                </div>
+
+                <div class="help-card">
+                    <h3>
+                        📊 Statistics & Analytics
+                    </h3>
+                    <ul>
+                        <li><a href="#viewing-stats">Viewing Your Statistics</a></li>
+                        <li><a href="#performance-trends">Understanding Performance Trends</a></li>
+                        <li><a href="#comparing-rounds">Comparing Different Rounds</a></li>
+                        <li><a href="#improvement-tips">Getting Improvement Tips</a></li>
+                    </ul>
+                </div>
+
+                <div class="help-card">
+                    <h3>
+                        🏟️ Golf Courses
+                    </h3>
+                    <ul>
+                        <li><a href="#finding-courses">Finding Golf Courses</a></li>
+                        <li><a href="#creating-courses">Creating New Courses</a></li>
+                        <li><a href="#managing-courses">Managing Course Details</a></li>
+                        <li><a href="#hole-information">Adding Hole Information</a></li>
+                    </ul>
+                </div>
+
+                <div class="help-card">
+                    <h3>
+                        ⚙️ Account & Settings
+                    </h3>
+                    <ul>
+                        <li><a href="#profile-editing">Editing Your Profile</a></li>
+                        <li><a href="#data-export">Exporting Your Data</a></li>
+                        <li><a href="#privacy-settings">Privacy Settings</a></li>
+                        <li><a href="#account-deletion">Deleting Your Account</a></li>
+                    </ul>
+                </div>
+
+                <div class="help-card">
+                    <h3>
+                        🔧 Troubleshooting
+                    </h3>
+                    <ul>
+                        <li><a href="#login-issues">Login Problems</a></li>
+                        <li><a href="#sync-issues">Data Sync Issues</a></li>
+                        <li><a href="#performance-issues">App Performance</a></li>
+                        <li><a href="#bug-reporting">Reporting Bugs</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I start tracking my first round of golf?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        To start your first round, tap the "New Round" button on the home screen or rounds tab. Search for your golf course or create a new one if it doesn't exist. Add any weather conditions or notes, then tap "Start Round" to begin tracking your game.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I edit my scores after completing a hole?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can edit hole scores even after completing them. Simply tap the edit button on any completed hole card to modify your score or swing details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How is my handicap calculated?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Your handicap can be manually entered in your profile settings. The app tracks your scores to help you monitor your improvement over time, but official handicap calculations should follow your local golf association's guidelines.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What's the difference between Quick Swing and Detailed Swing?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Quick Swing adds a basic stroke to your count instantly. Detailed Swing allows you to specify the type of swing (drive, putt, chip, etc.), club used, and whether it was successful. Use Quick Swing for faster play and Detailed Swing for comprehensive tracking.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I create and manage golf courses?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can create new golf courses if they don't exist in our database. As the course creator, you become the course administrator and can edit course details, add hole information including par and distance, and manage course settings.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is my golf data private and secure?
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, your personal golf data is private and secure. Only you can see your rounds, scores, and statistics. Course information is shared publicly to help other golfers find and play at different courses.
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h2>Still Need Help?</h2>
+                <p>Can't find what you're looking for? Our support team is here to help!</p>
+                <a href="mailto:support@clubsgolftracker.com" class="contact-button">Contact Support</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Clubs Golf Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const helpCards = document.querySelectorAll('.help-card');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            // Search help cards
+            helpCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+
+            // Search FAQ items
+            faqItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('span');
+                
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    icon.textContent = '−';
+                } else {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                }
+            });
+        });
+
+        // Initially hide all FAQ answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
