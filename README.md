@@ -1,2 +1,2 @@
-# clubs-golf-tracker-docs
+# clubs-docs
 Clubs Documentation Site
